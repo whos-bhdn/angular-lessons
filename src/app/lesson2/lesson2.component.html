@@ -1,0 +1,29 @@
+<p>lesson2 works!</p>
+<!--<hr>-->
+<!--<button (click)="addMessage($event)">add message</button>-->
+<!--<p>Message: {{ message }}</p>-->
+<!--<hr>-->
+<!--<button (click)="show()">show</button>-->
+<!--<h2 class="text" [class.show]="isShow">Some text</h2>-->
+<!--<hr>-->
+<!--<h3 [style.color]="isShow ? 'red' : 'green'">HELLO</h3>-->
+<!--<hr>-->
+<!--<input type="text" [(ngModel)]="login" name="login">-->
+<!--<input type="text" [(ngModel)]="login" name="login">-->
+<!--<button (click)="showUser()">USE</button>-->
+<hr>
+<h3 class="blue" *ngIf="isShow">check ngIf</h3>
+<button (click)="show()">show</button>
+
+<input type="text" [(ngModel)]="newName">
+<input *ngIf="!isEdit" type="button" value="add" (click)="addName()" [disabled]="!newName">
+<input *ngIf="isEdit" type="button" value="save" (click)="updateName()" [disabled]="!newName">
+<ul>
+  <li *ngFor="let name of arrNames; let i = index">
+  <span>
+      {{ i+1 }} {{ name }}
+    <button (click)="deleteName(i)">delete</button>
+    <button (click)="editName(i)">edit</button>
+  </span>
+  </li>
+</ul>
